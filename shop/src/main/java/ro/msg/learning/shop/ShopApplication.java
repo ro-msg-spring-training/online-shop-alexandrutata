@@ -17,6 +17,8 @@ public class ShopApplication {
 		SpringApplication.run(ShopApplication.class, args);
 		
 		log.info("------- > App started at {}...", LocalDateTime.now());
+
 	}
+
 
 }
