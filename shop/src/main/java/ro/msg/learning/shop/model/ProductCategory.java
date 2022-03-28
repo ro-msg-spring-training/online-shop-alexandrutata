@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @Data
 @SuperBuilder
-@NoArgsConstructor
+@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "product_category")
 public class ProductCategory extends BaseEntity{
