@@ -3,5 +3,5 @@ CREATE TABLE IF NOT EXISTS revenue(
     date timestamp,
     sum decimal,
     location_id int,
-    CONSTRAINT FK_LOCATION_REVENUE FOREIGN KEY(location_id) references location(id),
+    CONSTRAINT FK_LOCATION_REVENUE FOREIGN KEY(location_id) references location(id)
 );

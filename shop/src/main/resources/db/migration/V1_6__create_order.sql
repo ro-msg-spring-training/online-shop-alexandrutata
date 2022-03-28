@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS order(
+CREATE TABLE IF NOT EXISTS `order`(
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
     from_location_id int,
     customer_id int,
