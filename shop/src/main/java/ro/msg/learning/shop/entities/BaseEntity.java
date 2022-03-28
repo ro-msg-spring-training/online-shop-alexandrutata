@@ -5,16 +5,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 @MappedSuperclass
-@Getter @Setter
+@Data
 @SuperBuilder
 @NoArgsConstructor
-public class BaseEntity {
+public abstract class BaseEntity {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

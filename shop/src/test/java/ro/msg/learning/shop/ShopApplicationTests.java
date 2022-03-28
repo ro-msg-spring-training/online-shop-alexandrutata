@@ -18,16 +18,16 @@ class ShopApplicationTests {
 	private SupplierRepository supplierRepository;
 
 	@Test
-	void contextLoads() {
+	void testPersistance() {
 		var supplier = Supplier.builder()
-				.id(1)
-				.name("my first supplier")
-				.build();
+			.id(1)
+			.name("my first supplier")
+			.build();
 	
 		supplierRepository.save(supplier);
 
-		var name = supplierRepository.getById(1).getName();
+		var supplier2 = supplierRepository.getById(1);
+		var name = supplier2.getName();
 		assertEquals(supplier.getName(), name);
 	}
-
 }

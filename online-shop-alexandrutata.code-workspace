@@ -1,8 +1,14 @@
 {
 	"folders": [
 		{
+			"name": "🔍Decompiler!",
+			"uri": "decompileFs:/"
+		},
+		{
 			"path": "shop"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
 }
