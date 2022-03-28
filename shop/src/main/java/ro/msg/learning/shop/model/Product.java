@@ -18,7 +18,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @Data
 @SuperBuilder
-@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "product")
 public class Product extends BaseEntity{
