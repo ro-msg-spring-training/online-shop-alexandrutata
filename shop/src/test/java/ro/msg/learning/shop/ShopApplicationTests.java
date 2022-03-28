@@ -20,13 +20,14 @@ class ShopApplicationTests {
 	@Test
 	void testPersistance() {
 		var supplier = Supplier.builder()
-			.id(1)
+			.id(24)
 			.name("my first supplier")
 			.build();
 	
 		supplierRepository.save(supplier);
 
-		var supplier2 = supplierRepository.getById(1);
+		var supplier2 = supplierRepository.getById(24);
+		int id = supplier2.getId();
 		var name = supplier2.getName();
 		assertEquals(supplier.getName(), name);
 	}
