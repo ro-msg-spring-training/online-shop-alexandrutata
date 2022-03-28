@@ -1,4 +1,4 @@
-package ro.msg.learning.shop.entities;
+package ro.msg.learning.shop.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

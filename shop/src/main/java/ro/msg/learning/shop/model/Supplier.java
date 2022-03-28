@@ -1,4 +1,4 @@
-package ro.msg.learning.shop.entities;
+package ro.msg.learning.shop.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -7,8 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import lombok.extern.slf4j.Slf4j;
-import ro.msg.learning.shop.entities.Supplier;
-import ro.msg.learning.shop.repositories.SupplierRepository;
+import ro.msg.learning.shop.model.Supplier;
+import ro.msg.learning.shop.repository.SupplierRepository;
 
 @Slf4j
 @SpringBootApplication

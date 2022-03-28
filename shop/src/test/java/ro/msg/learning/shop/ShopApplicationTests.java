@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import ro.msg.learning.shop.entities.Supplier;
-import ro.msg.learning.shop.repositories.SupplierRepository;
+import ro.msg.learning.shop.model.Supplier;
+import ro.msg.learning.shop.repository.SupplierRepository;
 
 @SpringBootTest
 @ActiveProfiles("test")
