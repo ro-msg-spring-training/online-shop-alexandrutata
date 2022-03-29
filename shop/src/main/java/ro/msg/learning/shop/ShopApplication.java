@@ -23,15 +23,16 @@ public class ShopApplication {
 		var repo = context.getBean(SupplierRepository.class);
 		
 		var supplier = Supplier.builder()
-			.id(24)
+			//.id(24)
 			.name("my first supplier")
 			.build();
 
 		repo.save(supplier);
 
-		var supplier2 = repo.getById(24);
-		int id = supplier2.getId();
-		var name = supplier2.getName();
+		var supplier2 = repo.findById(1).orElse(new Supplier());
+		String name = supplier2.getName();
+
+		System.out.println("name " + name);
 
 	}
 }
