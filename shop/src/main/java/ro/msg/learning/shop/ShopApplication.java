@@ -20,6 +20,16 @@ public class ShopApplication {
 		
 		log.info("------- > App started at {}...", LocalDateTime.now());
 
+		var sup1 = context.getBean(TestModel.class);
+		sup1.setName("name1");
+		sup1.print();
+		var sup2 = context.getBean(TestModel.class);
+		sup2.setName("name2");
+		sup2.print();
+		sup1.print();
+		System.out.println(sup1 == sup2);
+
+		int i = 0;
 		var repo = context.getBean(SupplierRepository.class);
 		
 		var supplier = Supplier.builder()
