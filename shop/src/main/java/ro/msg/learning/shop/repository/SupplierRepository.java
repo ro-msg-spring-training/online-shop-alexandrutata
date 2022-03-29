@@ -7,7 +7,5 @@ import ro.msg.learning.shop.model.Supplier;
 
 @Repository
 public interface SupplierRepository extends JpaRepository<Supplier, Integer> {
-    //Supplier findByName(String name);
 
-    //Supplier getById(Integer id);
 }

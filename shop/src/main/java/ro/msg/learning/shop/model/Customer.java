@@ -28,6 +28,6 @@ public class Customer extends BaseEntity{
     @Column(name="password", unique = true, nullable = false)
     private String password;
 
-    @Column(name="email", unique = true, nullable = false)
+    @Column(name="email", unique = false, nullable = false)
     private String email;
 }
