@@ -7,5 +7,6 @@ import ro.msg.learning.shop.model.ProductCategory;
 
 @Repository
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Integer>{
-    
+    public boolean existsByName(String name);
+    public ProductCategory findByName(String name);
 }

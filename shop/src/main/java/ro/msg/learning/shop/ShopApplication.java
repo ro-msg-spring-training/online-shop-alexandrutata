@@ -6,8 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import lombok.extern.slf4j.Slf4j;
-import ro.msg.learning.shop.model.Supplier;
-import ro.msg.learning.shop.repository.SupplierRepository;
 
 @Slf4j
 @SpringBootApplication
@@ -16,7 +14,7 @@ public class ShopApplication {
 	public static void main(String[] args) {
 		log.info("------- > Starting application at {}", LocalDateTime.now());
 
-		var context = SpringApplication.run(ShopApplication.class, args);
+		SpringApplication.run(ShopApplication.class, args);
 		
 		log.info("------- > App started at {}...", LocalDateTime.now());
 	}

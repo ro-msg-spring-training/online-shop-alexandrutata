@@ -7,5 +7,6 @@ import ro.msg.learning.shop.model.Supplier;
 
 @Repository
 public interface SupplierRepository extends JpaRepository<Supplier, Integer> {
-
+    public boolean existsByName(String name);
+    public Supplier findByName(String name);
 }

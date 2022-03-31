@@ -1,17 +1,22 @@
 package ro.msg.learning.shop;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
+import ro.msg.learning.shop.dto.ProdAndCategoryDTO;
 import ro.msg.learning.shop.model.Customer;
 import ro.msg.learning.shop.model.Supplier;
 import ro.msg.learning.shop.repository.CustomerRepository;
 import ro.msg.learning.shop.repository.SupplierRepository;
+import ro.msg.learning.shop.service.ProductService;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -22,6 +27,9 @@ class ShopApplicationTests {
 
 	@Autowired
 	private CustomerRepository customerRepository;
+
+	@Autowired
+	private ProductService productService;
 
 	@Test
 	void testSupplierPersistance() {
@@ -77,5 +85,21 @@ class ShopApplicationTests {
 		assertTrue(customers.stream().anyMatch(c -> c.getFirstName().equals("myFirstName3")));
 		assertTrue(customers.stream().anyMatch(c -> c.getFirstName().equals("myFirstName2")));
 		assertTrue(customers.stream().noneMatch(c -> c.getFirstName().equals("myFirstName")));
+	}
+
+	@Test
+	void testProductService(){
+		var prodCatDTO = ProdAndCategoryDTO.builder()
+			.name("prodName1")
+			.description("prodDesc1")
+			.price(new BigDecimal(1))
+			.weight(1d)
+			.imageURL("prodImg1")
+			.categoryName("catName1")
+			.categoryDesc("catDesc1")
+			.supplierName("supName1")
+			.build();
+		productService.create(prodCatDTO);
+		assertNotEquals(0, prodCatDTO.getId());
 	}
 }

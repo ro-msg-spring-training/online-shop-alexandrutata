@@ -19,7 +19,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@Table(name = "order")
+@Table(name = "orders")
 public class Order extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = ProductCategory.class)
     @JoinColumn(name = "from_location_id", referencedColumnName = "id")
