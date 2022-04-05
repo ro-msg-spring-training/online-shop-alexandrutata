@@ -14,6 +14,7 @@ import org.springframework.test.context.ActiveProfiles;
 import ro.msg.learning.shop.dto.ProdAndCategoryDTO;
 import ro.msg.learning.shop.model.Customer;
 import ro.msg.learning.shop.model.Supplier;
+import ro.msg.learning.shop.properties.SupplierProperties;
 import ro.msg.learning.shop.repository.CustomerRepository;
 import ro.msg.learning.shop.repository.SupplierRepository;
 import ro.msg.learning.shop.service.ProductService;
@@ -30,6 +31,14 @@ class ShopApplicationTests {
 
 	@Autowired
 	private ProductService productService;
+
+	@Autowired
+    private SupplierProperties supplierProperties;
+
+	@Test
+	void testSupplierProperties() {
+		assertEquals(4, supplierProperties.getPageSize());
+	}
 
 	@Test
 	void testSupplierPersistance() {
