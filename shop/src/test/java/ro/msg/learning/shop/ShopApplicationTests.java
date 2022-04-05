@@ -37,7 +37,7 @@ class ShopApplicationTests {
 
 	@Test
 	void testSupplierProperties() {
-		assertEquals(4, supplierProperties.getPageSize());
+		assertEquals(1, supplierProperties.getPageSize());
 	}
 
 	@Test
