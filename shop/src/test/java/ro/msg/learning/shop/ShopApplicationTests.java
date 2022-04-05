@@ -35,6 +35,7 @@ class ShopApplicationTests {
 	void testSupplierPersistance() {
 		var supplier = Supplier.builder()
 				.name("my first supplier")
+				.id(6)
 				.build();
 
 		supplierRepository.save(supplier);

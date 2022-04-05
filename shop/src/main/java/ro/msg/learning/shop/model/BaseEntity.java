@@ -13,9 +13,9 @@ import lombok.experimental.SuperBuilder;
 @MappedSuperclass
 @Data
 @SuperBuilder
-@NoArgsConstructor(access=AccessLevel.PROTECTED, force=true)
+@NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
 public abstract class BaseEntity {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//, generator = "seq_mytable_sid")
     private int id;
 }
