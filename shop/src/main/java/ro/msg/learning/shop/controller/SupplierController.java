@@ -18,7 +18,7 @@ public class SupplierController {
 
     @GetMapping("/test")
     public String get(Principal principal){
-        return "***" + (principal == null ? "NULL" : principal.getName()) + "***";
+        return "***" + (principal == null ? "YOU ARE ANONYMUS" : "hello " + principal.getName()) + "***";
     }
 
     @GetMapping("/suppliers")
