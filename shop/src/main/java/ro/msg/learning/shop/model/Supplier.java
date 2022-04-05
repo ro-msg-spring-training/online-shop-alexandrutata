@@ -16,6 +16,6 @@ import lombok.experimental.SuperBuilder;
 @EqualsAndHashCode(callSuper = true)
 @Table(name = "supplier")
 public class Supplier extends BaseEntity {
-    @Column(name="name", unique = true, nullable = false)
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
 }
