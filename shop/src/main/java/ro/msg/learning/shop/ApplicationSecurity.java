@@ -9,17 +9,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
-    // @Override
-    // public void configure(WebSecurity web) throws Exception {
-    // web.ignoring().antMatchers("/**");
-    // }
-
-    // @Override
-    // public void configure(WebSecurity web) throws Exception {
-    //     web.ignoring()
-    //             // Spring Security should completely ignore URLs starting with /resources/
-    //             .antMatchers("/resources/**");
-    // }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
