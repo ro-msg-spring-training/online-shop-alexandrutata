@@ -3,7 +3,7 @@
     {
       "name": "suppliers.pageSize",
       "type": "java.lang.Integer",
-      "description": "Sets the maximum number of suppliers to display in a list."
+      "description": "Sets the maximum number of suppliers to display in a list"
     }
   ]
 }
