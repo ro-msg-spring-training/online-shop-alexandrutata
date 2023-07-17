@@ -1,0 +1,18 @@
+# DataSource
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/online-shop
+    username: admin
+    password: admin
+    hikari:
+      schema: dev
+  jpa:
+    # Disable Hibernate schema generation/application -> 'validate' for test & 'none' for production
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  # Flyway
+  flyway:
+    locations: classpath:db/migration

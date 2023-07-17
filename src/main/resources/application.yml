@@ -1,0 +1,49 @@
+server:
+  # Disable stack trace on controller exceptions
+  error:
+    include-stacktrace: never
+  port: 8080
+logging:
+  level:
+    root: info
+spring:
+  # trace JPA to SQL commands
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    # https://www.baeldung.com/spring-open-session-in-view
+    open-in-view: false
+  # Flyway
+  flyway:
+    schemas: dev
+  jackson:
+    serialization:
+      # date serialization as timestamp
+      write-dates-as-timestamps: true
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+    prometheus:
+      enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: [ 'health', 'info', 'prometheus', 'metrics' ]
+  metrics:
+    distribution:
+      percentiles:
+        all: 0, 0.5, 0.75, 0.95, 0.99, 1.0
+  prometheus:
+    metrics:
+      export:
+        enabled: true
