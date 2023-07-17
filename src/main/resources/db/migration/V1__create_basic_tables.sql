@@ -1,30 +1,97 @@
-CREATE TABLE IF NOT EXISTS product_category
+create table if not exists product_category
 (
-    id              int NOT NULL,
-    name            varchar(20) NOT NULL,
-    description     varchar(50) NOT NULL,
-    PRIMARY KEY (id)
+    id              int not null,
+    name            varchar(20) not null,
+    description     varchar(50) not null,
+    primary key (id)
 );
 
-CREATE TABLE IF NOT EXISTS supplier
+create table if not exists supplier
 (
-    id              int NOT NULL,
-    name            varchar(20) NOT NULL,
-    PRIMARY KEY (id)
+    id              int not null,
+    name            varchar(20) not null,
+    primary key (id)
 );
 
-CREATE TABLE IF NOT EXISTS product
+create table if not exists location
 (
-    id              int auto_increment NOT NULL,
-    name            varchar(20) NOT NULL,
-    description     varchar(50) NOT NULL,
-    price           dec(20,2) NOT NULL,
-    weight          double precision NOT NULL,
-    category_id     int NOT NULL,
-    supplier_id     int NOT NULL,
+    id              int not null,
+    name            varchar(50) not null,
+    country         varchar(50) not null,
+    city            varchar(50) not null,
+    street          varchar(50) not null,
+    primary key (id)
+);
+
+create table if not exists product
+(
+    id              int auto_increment not null,
+    name            varchar(20) not null,
+    description     varchar(50) not null,
+    price           dec(20,2) not null,
+    weight          double precision not null,
+    category_id     int not null,
+    supplier_id     int not null,
     image_url       varchar(255),
-    PRIMARY KEY (id),
-    FOREIGN KEY (category_id) REFERENCES product_category(id),
-    FOREIGN KEY (supplier_id) REFERENCES supplier(id)
+    primary key (id),
+    foreign key (category_id) references product_category(id),
+    foreign key (supplier_id) references supplier(id)
 );
+
+create table if not exists customer
+(
+    id              int auto_increment not null,
+    firstname       varchar(50) not null,
+    lastname        varchar(50) not null,
+    username        varchar(50) not null,
+    password        varchar(50) not null,
+    email           varchar(50) not null,
+    primary key (id)
+);
+
+create table if not exists stock
+(
+    product_id       int not null,
+    location_id      int not null,
+    quantity         int not null,
+    primary key (product_id, location_id),
+    foreign key (product_id) references product(id),
+    foreign key (location_id) references location(id)
+);
+
+create table if not exists `order`
+(
+    id              int auto_increment not null,
+    shipped_from_id int not null,
+    customer_id     int not null,
+    created_at      timestamp(9) null,
+    country         varchar(50) not null,
+    city            varchar(50) not null,
+    street          varchar(50) not null,
+    primary key (id),
+    foreign key (shipped_from_id) references location(id),
+    foreign key (customer_id) references customer(id)
+);
+
+create table if not exists order_detail
+(
+    order_id         int not null,
+    product_id       int not null,
+    quantity         int not null,
+    primary key (order_id, product_id),
+    foreign key (order_id) references `order`(id),
+    foreign key (product_id) references product(id)
+);
+
+create table if not exists revenue
+(
+    id              int auto_increment not null,
+    location_id     int not null,
+    date            date null,
+    sum             dec(20,2) not null,
+    primary key (id),
+    foreign key (location_id) references location(id)
+);
+
+
 -- CREATE INDEX IF NOT EXISTS policies_policy_holder_index ON policies (policy_holder);
