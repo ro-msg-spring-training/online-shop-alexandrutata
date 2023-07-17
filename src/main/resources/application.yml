@@ -7,8 +7,13 @@ logging:
   level:
     root: info
 spring:
+  # enabling ExceptionHandlerExceptionResolver like ConstraintViolationException
+  mvc:
+    log-resolved-exception: true
   # trace JPA to SQL commands
   jpa:
+    hibernate:
+      ddl-auto: none
     show-sql: false
     properties:
       hibernate:
