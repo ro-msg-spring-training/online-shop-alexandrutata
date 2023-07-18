@@ -3,14 +3,16 @@ create table if not exists product_category
     id              int not null,
     name            varchar(20) not null,
     description     varchar(50) not null,
-    primary key (id)
+    primary key (id),
+    constraint uq_product_category_name unique (name)
 );
 
 create table if not exists supplier
 (
     id              int not null,
     name            varchar(20) not null,
-    primary key (id)
+    primary key (id),
+    constraint uq_supplier_name unique (name)
 );
 
 create table if not exists location
@@ -20,7 +22,8 @@ create table if not exists location
     country         varchar(50) not null,
     city            varchar(50) not null,
     street          varchar(50) not null,
-    primary key (id)
+    primary key (id),
+    constraint uq_location_name unique (name)
 );
 
 create table if not exists product
