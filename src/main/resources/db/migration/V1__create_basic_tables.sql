@@ -54,10 +54,12 @@ create table if not exists customer
 
 create table if not exists stock
 (
-    product_id       int not null,
-    location_id      int not null,
-    quantity         int not null,
-    primary key (product_id, location_id),
+    id              int auto_increment not null,
+    product_id      int not null,
+    location_id     int not null,
+    quantity        int not null,
+    primary key (id),
+    constraint uq_stock unique (product_id, location_id),
     foreign key (product_id) references product(id),
     foreign key (location_id) references location(id)
 );
@@ -78,10 +80,12 @@ create table if not exists `order`
 
 create table if not exists order_detail
 (
-    order_id         int not null,
-    product_id       int not null,
-    quantity         int not null,
-    primary key (order_id, product_id),
+    id              int auto_increment not null,
+    order_id        int not null,
+    product_id      int not null,
+    quantity        int not null,
+    primary key (id),
+    constraint uq_order_detail unique (order_id, product_id),
     foreign key (order_id) references `order`(id),
     foreign key (product_id) references product(id)
 );

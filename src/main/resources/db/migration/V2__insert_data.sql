@@ -7,7 +7,7 @@ insert into supplier(id, name) values(3, 'altex');
 
 insert into location(id, name, country, city, street) values(1, 'deposit 1', 'romania', 'cluj', 'center');
 insert into location(id, name, country, city, street) values(2, 'deposit 2', 'romania', 'cluj', 'east');
-insert into location(id, name, country, city, street) values(3, 'deposit 2', 'romania', 'cluj', 'west');
+insert into location(id, name, country, city, street) values(3, 'deposit 3', 'romania', 'cluj', 'west');
 
 insert into product(name, description, price, weight, category_id, supplier_id, image_url) values('lego ninjago', 'lego set with ninjago', 299.99, 1.45, 2, 3, 'www.lego.com/ninjago');
 insert into product(name, description, price, weight, category_id, supplier_id, image_url) values('barbie', 'barbie doll', 149.99, 0.800, 2, 1, 'www.barbie.com');
