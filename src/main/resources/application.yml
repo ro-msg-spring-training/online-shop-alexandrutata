@@ -20,9 +20,6 @@ spring:
         format_sql: true
     # https://www.baeldung.com/spring-open-session-in-view
     open-in-view: false
-  # Flyway
-  flyway:
-    schemas: dev
   jackson:
     serialization:
       # date serialization as timestamp
