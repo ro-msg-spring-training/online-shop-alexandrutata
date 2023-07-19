@@ -20,9 +20,9 @@ insert into `stock`(product_id, location_id, quantity) values(1, 1, 100);
 insert into `stock`(product_id, location_id, quantity) values(1, 2, 50);
 insert into `stock`(product_id, location_id, quantity) values(2, 3, 10);
 
-insert into `order`(shipped_from_id, customer_id, created_at, country, city, street) values(1, 1, '2023-01-30 12:34:56', 'romania', 'cluj', 'eroilor');
-insert into `order`(shipped_from_id, customer_id, created_at, country, city, street) values(1, 2, '2023-06-02 12:34:56', 'romania', 'cluj', 'eroilor');
-insert into `order`(shipped_from_id, customer_id, created_at, country, city, street) values(3, 2, '2023-01-17 12:34:56', 'romania', 'iasi', 'eroilor');
+insert into `orders`(shipped_from_id, customer_id, created_at, country, city, street) values(1, 1, '2023-01-30 12:34:56', 'romania', 'cluj', 'eroilor');
+insert into `orders`(shipped_from_id, customer_id, created_at, country, city, street) values(1, 2, '2023-06-02 12:34:56', 'romania', 'cluj', 'eroilor');
+insert into `orders`(shipped_from_id, customer_id, created_at, country, city, street) values(3, 2, '2023-01-17 12:34:56', 'romania', 'iasi', 'eroilor');
 
 insert into `order_detail`(order_id, product_id, quantity) values(1, 1, 2);
 insert into `order_detail`(order_id, product_id, quantity) values(2, 3, 2);

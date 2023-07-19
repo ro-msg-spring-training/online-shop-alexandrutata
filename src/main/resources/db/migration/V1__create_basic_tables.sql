@@ -64,7 +64,7 @@ create table if not exists stock
     foreign key (location_id) references location(id)
 );
 
-create table if not exists `order`
+create table if not exists orders
 (
     id              int auto_increment not null,
     shipped_from_id int not null,
@@ -86,7 +86,7 @@ create table if not exists order_detail
     quantity        int not null,
     primary key (id),
     constraint uq_order_detail unique (order_id, product_id),
-    foreign key (order_id) references `order`(id),
+    foreign key (order_id) references orders(id),
     foreign key (product_id) references product(id)
 );
 

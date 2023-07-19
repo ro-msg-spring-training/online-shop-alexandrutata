@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @SuperBuilder
 @NoArgsConstructor
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order extends BaseModel {
     @JoinColumn(name = "shipped_from_id")
     @ManyToOne()
