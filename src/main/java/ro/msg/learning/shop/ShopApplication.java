@@ -38,6 +38,18 @@ public class ShopApplication {
 		OrderRepository orderRepo = context.getBean(OrderRepository.class);
 		List<Order> orders = orderRepo.findAll();
 		log.info(orders.toString());
+
+		StockRepository stockRepo = context.getBean(StockRepository.class);
+		List<Stock> stocks = stockRepo.findAll();
+		log.info(stocks.toString());
+
+		OrderDetailRepository orderDetailRepo = context.getBean(OrderDetailRepository.class);
+		List<OrderDetail> orderDetails = orderDetailRepo.findAll();
+		log.info(orderDetails.toString());
+
+		RevenueRepository revenueRepo = context.getBean(RevenueRepository.class);
+		List<Revenue> revenues = revenueRepo.findAll();
+		log.info(revenues.toString());
 	}
 
 }
