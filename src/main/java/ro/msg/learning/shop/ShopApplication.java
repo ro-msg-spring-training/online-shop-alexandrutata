@@ -3,14 +3,8 @@ package ro.msg.learning.shop;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import ro.msg.learning.shop.models.Location;
-import ro.msg.learning.shop.models.Product;
-import ro.msg.learning.shop.models.Category;
-import ro.msg.learning.shop.models.Supplier;
-import ro.msg.learning.shop.repositories.LocationRepository;
-import ro.msg.learning.shop.repositories.CategoryRepository;
-import ro.msg.learning.shop.repositories.ProductRepository;
-import ro.msg.learning.shop.repositories.SupplierRepository;
+import ro.msg.learning.shop.models.*;
+import ro.msg.learning.shop.repositories.*;
 
 import java.util.List;
 
@@ -36,6 +30,14 @@ public class ShopApplication {
 		ProductRepository prodRepo = context.getBean(ProductRepository.class);
 		List<Product> products = prodRepo.findAll();
 		log.info(products.toString());
+
+		CustomerRepository custRepo = context.getBean(CustomerRepository.class);
+		List<Customer> customers = custRepo.findAll();
+		log.info(customers.toString());
+
+		OrderRepository orderRepo = context.getBean(OrderRepository.class);
+		List<Order> orders = orderRepo.findAll();
+		log.info(orders.toString());
 	}
 
 }

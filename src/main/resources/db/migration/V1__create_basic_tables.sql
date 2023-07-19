@@ -99,6 +99,3 @@ create table if not exists revenue
     primary key (id),
     foreign key (location_id) references location(id)
 );
-
-
--- CREATE INDEX IF NOT EXISTS policies_policy_holder_index ON policies (policy_holder);
