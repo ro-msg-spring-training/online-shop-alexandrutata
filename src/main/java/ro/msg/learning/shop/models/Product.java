@@ -6,8 +6,8 @@ import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
+@Data
+@EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @SuperBuilder
 @NoArgsConstructor
