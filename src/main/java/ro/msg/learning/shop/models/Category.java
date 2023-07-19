@@ -13,8 +13,8 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @Entity
-@Table(name = "product_category")
-public class ProductCategory extends BaseModel {
+@Table(name = "category")
+public class Category extends BaseModel {
     @Column(name = "name")
     private String name;
 

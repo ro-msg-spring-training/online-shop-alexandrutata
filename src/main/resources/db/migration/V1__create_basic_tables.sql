@@ -1,10 +1,10 @@
-create table if not exists product_category
+create table if not exists category
 (
     id              int not null,
     name            varchar(20) not null,
     description     varchar(50) not null,
     primary key (id),
-    constraint uq_product_category_name unique (name)
+    constraint uq_category_name unique (name)
 );
 
 create table if not exists supplier
@@ -37,7 +37,7 @@ create table if not exists product
     supplier_id     int not null,
     image_url       varchar(255),
     primary key (id),
-    foreign key (category_id) references product_category(id),
+    foreign key (category_id) references category(id),
     foreign key (supplier_id) references supplier(id)
 );
 

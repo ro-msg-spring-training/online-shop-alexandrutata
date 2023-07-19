@@ -28,7 +28,7 @@ public class Product extends BaseModel {
 
     @JoinColumn(name = "category_id")
     @ManyToOne()
-    private ProductCategory productCategory;
+    private Category category;
 
     @JoinColumn(name = "supplier_id")
     @ManyToOne()
