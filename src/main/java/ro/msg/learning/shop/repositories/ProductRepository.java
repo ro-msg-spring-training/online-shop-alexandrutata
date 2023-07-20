@@ -2,8 +2,8 @@ package ro.msg.learning.shop.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ro.msg.learning.shop.models.Product;
+import ro.msg.learning.shop.entities.ProductEntity;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Integer> {
+public interface ProductRepository extends JpaRepository<ProductEntity, Integer> {
 }

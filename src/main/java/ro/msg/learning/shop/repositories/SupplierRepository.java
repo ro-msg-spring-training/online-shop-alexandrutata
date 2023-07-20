@@ -2,9 +2,9 @@ package ro.msg.learning.shop.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ro.msg.learning.shop.models.Supplier;
+import ro.msg.learning.shop.entities.SupplierEntity;
 
 @Repository
-public interface SupplierRepository extends JpaRepository<Supplier, Integer> {
-    Supplier findByName(String name);
+public interface SupplierRepository extends JpaRepository<SupplierEntity, Integer> {
+    SupplierEntity findByName(String name);
 }
