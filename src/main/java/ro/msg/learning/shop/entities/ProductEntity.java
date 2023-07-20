@@ -1,4 +1,4 @@
-package ro.msg.learning.shop.models;
+package ro.msg.learning.shop.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Entity
 @Table(name = "product")
-public class Product extends BaseModel {
+public class ProductEntity extends BaseEntity {
     @Column(name = "name")
     private String name;
 
@@ -28,11 +28,11 @@ public class Product extends BaseModel {
 
     @JoinColumn(name = "category_id")
     @ManyToOne()
-    private Category category;
+    private CategoryEntity category;
 
     @JoinColumn(name = "supplier_id")
     @ManyToOne()
-    private Supplier supplier;
+    private SupplierEntity supplier;
 
     @Column(name = "image_url")
     private String imageUrl;

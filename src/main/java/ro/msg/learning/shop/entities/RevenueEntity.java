@@ -1,4 +1,4 @@
-package ro.msg.learning.shop.models;
+package ro.msg.learning.shop.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -17,10 +17,10 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Table(name = "revenue")
-public class Revenue extends BaseModel {
+public class RevenueEntity extends BaseEntity {
     @JoinColumn(name = "location_id")
     @ManyToOne()
-    private Location location;
+    private LocationEntity location;
 
     @Column(name = "date")
     private LocalDate date;

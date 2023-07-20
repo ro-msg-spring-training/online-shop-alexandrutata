@@ -1,4 +1,4 @@
-package ro.msg.learning.shop.models;
+package ro.msg.learning.shop.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -13,15 +13,15 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @Entity
-@Table(name = "order_detail")
-public class OrderDetail extends BaseModel {
-    @JoinColumn(name = "order_id")
-    @ManyToOne()
-    private Order order;
-
+@Table(name = "stock")
+public class StockEntity extends BaseEntity {
     @JoinColumn(name = "product_id")
     @ManyToOne()
-    private Product product;
+    private ProductEntity product;
+
+    @JoinColumn(name = "location_id")
+    @ManyToOne()
+    private LocationEntity location;
 
     @Column(name = "quantity")
     private int quantity;

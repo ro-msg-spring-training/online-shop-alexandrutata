@@ -1,4 +1,4 @@
-package ro.msg.learning.shop.models;
+package ro.msg.learning.shop.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,7 +11,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @Entity
 @Table(name = "customer")
-public class Customer extends BaseModel {
+public class CustomerEntity extends BaseEntity {
     @Column(name = "firstname")
     private String firstname;
 

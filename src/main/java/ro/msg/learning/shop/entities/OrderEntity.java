@@ -1,13 +1,13 @@
-package ro.msg.learning.shop.models;
+package ro.msg.learning.shop.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+
+import java.time.LocalDateTime;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -15,10 +15,18 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @Entity
-@Table(name = "location")
-public class Location extends BaseModel {
-    @Column(name = "name")
-    private String name;
+@Table(name = "orders")
+public class OrderEntity extends BaseEntity {
+    @JoinColumn(name = "shipped_from_id")
+    @ManyToOne()
+    private LocationEntity location;
+
+    @JoinColumn(name = "customer_id")
+    @ManyToOne()
+    private CustomerEntity customer;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
     @Column(name = "country")
     private String country;
