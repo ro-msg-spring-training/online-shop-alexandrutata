@@ -20,7 +20,7 @@ public class OrderDetailEntity extends BaseEntity {
     private OrderEntity order;
 
     @JoinColumn(name = "product_id")
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private ProductEntity product;
 
     @Column(name = "quantity")

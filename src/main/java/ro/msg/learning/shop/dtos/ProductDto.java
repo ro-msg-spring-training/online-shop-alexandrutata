@@ -30,6 +30,9 @@ public class ProductDto extends BaseDto {
     @JsonProperty("category")
     private CategoryDto category;
 
+    @JsonProperty("supplier")
+    private SupplierDto supplier;
+
     @JsonProperty("image_url")
     private String imageUrl;
 }

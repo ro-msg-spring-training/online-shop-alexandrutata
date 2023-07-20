@@ -16,7 +16,7 @@ import lombok.experimental.SuperBuilder;
 @Table(name = "stock")
 public class StockEntity extends BaseEntity {
     @JoinColumn(name = "product_id")
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.REMOVE)
     private ProductEntity product;
 
     @JoinColumn(name = "location_id")

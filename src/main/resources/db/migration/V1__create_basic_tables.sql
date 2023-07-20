@@ -60,7 +60,7 @@ create table if not exists stock
     quantity        int not null,
     primary key (id),
     constraint uq_stock unique (product_id, location_id),
-    foreign key (product_id) references product(id),
+    foreign key (product_id) references product(id) on delete cascade,
     foreign key (location_id) references location(id)
 );
 
@@ -87,7 +87,7 @@ create table if not exists order_detail
     primary key (id),
     constraint uq_order_detail unique (order_id, product_id),
     foreign key (order_id) references orders(id),
-    foreign key (product_id) references product(id)
+    foreign key (product_id) references product(id) on delete cascade
 );
 
 create table if not exists revenue

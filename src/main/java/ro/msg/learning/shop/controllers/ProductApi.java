@@ -1,5 +1,6 @@
 package ro.msg.learning.shop.controllers;
 
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -31,5 +32,28 @@ public class ProductApi {
     public ResponseEntity<List<ProductDto>> readAll() {
         List<ProductDto> products = productService.readAll();
         return ResponseEntity.ok(products);
+    }
+
+    @PostMapping(value = "/product")
+    public ResponseEntity<Integer> create(@RequestBody ProductDto product) {
+        int productId = productService.create(product);
+        return ResponseEntity.ok(productId);
+    }
+
+    @PutMapping(value = "/product")
+    public ResponseEntity<Void> update(@RequestBody ProductDto product) {
+        try {
+            productService.update(product);
+            return ResponseEntity.ok().build();
+        } catch (EntityNotFoundException ex){
+            log.error("No product found for id {}", product.getId());
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping(value = "/product/{id}")
+    public ResponseEntity<Void> delete(@PathVariable("id") int id) {
+        productService.delete(id);
+        return ResponseEntity.ok().build();
     }
 }
