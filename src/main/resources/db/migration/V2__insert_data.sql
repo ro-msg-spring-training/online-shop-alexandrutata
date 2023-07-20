@@ -18,6 +18,7 @@ insert into `customer`(firstname, lastname, username, password, email) values('v
 
 insert into `stock`(product_id, location_id, quantity) values(1, 1, 100);
 insert into `stock`(product_id, location_id, quantity) values(1, 2, 50);
+insert into `stock`(product_id, location_id, quantity) values(2, 1, 20);
 insert into `stock`(product_id, location_id, quantity) values(2, 3, 10);
 
 insert into `orders`(shipped_from_id, customer_id, created_at, country, city, street) values(1, 1, '2023-01-30 12:34:56', 'romania', 'cluj', 'eroilor');

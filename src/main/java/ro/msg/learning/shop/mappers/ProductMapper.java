@@ -7,7 +7,7 @@ import ro.msg.learning.shop.dtos.ProductRequestDto;
 import ro.msg.learning.shop.entities.ProductEntity;
 
 @Mapper
-public interface ProductEntityDtoMapper {
+public interface ProductMapper {
     ProductDto mapEntityToDto(ProductEntity input);
 
     @Mapping(target = "category.id", source = "categoryId")

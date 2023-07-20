@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import ro.msg.learning.shop.dtos.ProductDto;
 import ro.msg.learning.shop.dtos.ProductRequestDto;
 import ro.msg.learning.shop.entities.ProductEntity;
-import ro.msg.learning.shop.mappers.ProductEntityDtoMapper;
+import ro.msg.learning.shop.mappers.ProductMapper;
 import ro.msg.learning.shop.repositories.ProductRepository;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository repository;
-    private final ProductEntityDtoMapper mapper;
+    private final ProductMapper mapper;
 
     @Override
     public ProductDto readById(int id) {
