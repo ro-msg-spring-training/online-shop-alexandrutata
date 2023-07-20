@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.msg.learning.shop.dtos.ProductDto;
+import ro.msg.learning.shop.dtos.ProductRequestDto;
 import ro.msg.learning.shop.services.ProductService;
 
 import java.util.List;
@@ -35,13 +36,13 @@ public class ProductApi {
     }
 
     @PostMapping(value = "/product")
-    public ResponseEntity<Integer> create(@RequestBody ProductDto product) {
+    public ResponseEntity<Integer> create(@RequestBody ProductRequestDto product) {
         int productId = productService.create(product);
         return ResponseEntity.ok(productId);
     }
 
     @PutMapping(value = "/product")
-    public ResponseEntity<Void> update(@RequestBody ProductDto product) {
+    public ResponseEntity<Void> update(@RequestBody ProductRequestDto product) {
         try {
             productService.update(product);
             return ResponseEntity.ok().build();

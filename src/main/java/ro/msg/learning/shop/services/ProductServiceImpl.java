@@ -4,6 +4,7 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ro.msg.learning.shop.dtos.ProductDto;
+import ro.msg.learning.shop.dtos.ProductRequestDto;
 import ro.msg.learning.shop.entities.ProductEntity;
 import ro.msg.learning.shop.mappers.ProductEntityDtoMapper;
 import ro.msg.learning.shop.repositories.ProductRepository;
@@ -29,19 +30,19 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public int create(ProductDto product) {
-        ProductEntity entity = mapper.mapDtoToEntity(product);
+    public int create(ProductRequestDto product) {
+        ProductEntity entity = mapper.mapRequestToEntity(product);
         entity = repository.save(entity);
         return entity.getId();
     }
 
     @Override
-    public void update(ProductDto product) {
+    public void update(ProductRequestDto product) {
         if (!repository.existsById(product.getId())) {
             throw new EntityNotFoundException();
         }
 
-        ProductEntity entity = mapper.mapDtoToEntity(product);
+        ProductEntity entity = mapper.mapRequestToEntity(product);
         repository.save(entity);
     }
 
