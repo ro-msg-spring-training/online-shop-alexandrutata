@@ -13,8 +13,8 @@ insert into `product`(name, description, price, weight, category_id, supplier_id
 insert into `product`(name, description, price, weight, category_id, supplier_id, image_url) values('barbie', 'barbie doll', 149.99, 0.800, 2, 1, 'www.barbie.com');
 insert into `product`(name, description, price, weight, category_id, supplier_id, image_url) values('arctic m123', 'arctic refrigirator', 1299.99, 25.45, 1, 2, 'www.barbie.com');
 
-insert into `customer`(firstname, lastname, username, password, email) values('alex', 'tata', 'alex.tata', '123', 'alex_tata@yahoo.com');
-insert into `customer`(firstname, lastname, username, password, email) values('vero', 'pop', 'vero.pop', '321', 'vero_pop@yahoo.com');
+insert into `customer`(firstname, lastname, username, password, email) values('alex', 'tata', 'alex.tata', /*BCryptPasswordEncoder: 123*/ '$2a$04$s/KzrFxaQBrqd0w7aDzgwOP5xY5yGffb0juJjWc2oHCqI9Yg1wO8.', 'alex_tata@yahoo.com');
+insert into `customer`(firstname, lastname, username, password, email) values('vero', 'pop', 'vero.pop', /*BCryptPasswordEncoder: 321*/'$2a$04$4zXT8qQZX0AMV.oP4mD6Je1Bo1N98UZ926pZvUCy/vI0M.eE5Lbr2', 'vero_pop@yahoo.com');
 
 insert into `stock`(product_id, location_id, quantity) values(1, 1, 100);
 insert into `stock`(product_id, location_id, quantity) values(1, 2, 50);

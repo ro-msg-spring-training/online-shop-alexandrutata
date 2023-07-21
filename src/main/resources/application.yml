@@ -49,3 +49,7 @@ management:
     metrics:
       export:
         enabled: true
+shop:
+  authentication:
+    formLogin: false
+    basic: true
